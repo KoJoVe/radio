@@ -1,0 +1,32 @@
+.app {
+  text-align: center;
+}
+
+.app-logo {
+  image-rendering: auto;
+  background: black;
+  border: 1px solid black;
+  -webkit-box-shadow: 0px 0px 3px 3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 3px 3px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 3px 3px rgba(0,0,0,0.75);
+  animation: app-logo-spin infinite 4s linear;
+  height: 150px;
+  border-radius: 150px;
+}
+
+.app-header {
+  height: 150px;
+  padding: 20px;
+  color: #262730;
+  font-size: 1.7em;
+  padding-top: 150px;
+}
+
+.red {
+  color: #FF331F;
+}
+
+@keyframes app-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
