@@ -3,13 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "http-server": "^0.12.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-scripts": "0.9.x"
   },
   "devDependencies": {},
   "scripts": {
-    "start": "npm i && react-scripts build",
+    "start": "npm i && react-scripts build && http-server ./build",
     "serve": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",

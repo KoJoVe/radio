@@ -2,6 +2,15 @@
   text-align: center;
 }
 
+h1, h2, h3, h4, h5 {
+  margin: 0;
+}
+
+.beetle {
+  width: 60px;
+  margin: 10px;
+}
+
 .app-logo {
   image-rendering: auto;
   background: black;
@@ -12,13 +21,13 @@
   animation: app-logo-spin infinite 4s linear;
   height: 150px;
   border-radius: 150px;
+  margin-bottom: 30px;
 }
 
 .app-header {
   height: 150px;
   padding: 20px;
   color: #262730;
-  font-size: 1.7em;
   padding-top: 150px;
 }
 
