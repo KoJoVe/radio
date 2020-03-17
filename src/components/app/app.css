@@ -2,7 +2,7 @@
   text-align: center;
   width: 100%;
   min-height: 100%;
-  background: white;
+  background: #F7F7F2;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,25 +14,34 @@ h1, h2, h3, h4, h5 {
 }
 
 .beetle {
-  width: 60px;
-  height: 105px;
+  width: 125px;
+  height: 125px;
   margin: auto;
   position: relative;
   cursor: pointer;
   margin-top: 20px;
   margin-bottom: 20px;
-  background: url('../../assets/beetleplay.png');
-  background-size: contain;
-}
-
-.beetle.animated {
   background: url('../../assets/beetle.png');
   background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.beetle.animated:hover {
-  background: url('../../assets/beetlepause.png');
-  background-size: contain;
+.beetle .playButton {
+  width: 100%;
+  height: 100%;
+  background-image: url('../../assets/play.svg');
+  background-repeat: no-repeat;
+  background-position: 60px 60px;
+}
+
+.beetle.animated .playButton {
+  background-image: none;
+}
+
+.beetle.animated:hover .playButton {
+  background-image: url('../../assets/pause.svg');
+  background-position: 58px 60px;
 }
 
 .app-logo {
@@ -90,4 +99,29 @@ h1, h2, h3, h4, h5 {
 
 .schedule li {
   margin: 5px 0;
+  color: #262322;
+}
+
+.schedule li b {
+  color: #EA526F;
+}
+
+.dark {
+  color: #262322;
+}
+
+.green {
+  color: #1F6D20;
+}
+
+.pink {
+  color: #EA526F;
+}
+
+.white {
+  color: #F7F7F2;
+}
+
+.blue {
+  color: #231651;
 }
