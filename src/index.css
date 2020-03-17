@@ -4,3 +4,23 @@ html, body, #root {
   padding: 0;
   font-family: sans-serif;
 }
+
+.dark {
+  color: #262322;
+}
+
+.green {
+  color: #1F6D20;
+}
+
+.pink {
+  color: #EA526F;
+}
+
+.white {
+  color: #F7F7F2;
+}
+
+.blue {
+  color: #231651;
+}

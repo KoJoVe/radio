@@ -65,10 +65,6 @@ h1, h2, h3, h4, h5 {
   color: #262730;
 }
 
-.red {
-  color: #FF331F;
-}
-
 @keyframes app-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
@@ -91,8 +87,8 @@ h1, h2, h3, h4, h5 {
 
 .schedule {
   width: 100%;
-  max-width: 600px;
-  padding: 20px;
+  max-width: 650px;
+  padding: 0 20px;
   box-sizing: border-box;
   text-align: left;
 }
@@ -106,22 +102,13 @@ h1, h2, h3, h4, h5 {
   color: #EA526F;
 }
 
-.dark {
-  color: #262322;
+.volume {
+  margin-top: 20px;
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.2s ease-in-out;
 }
 
-.green {
-  color: #1F6D20;
-}
-
-.pink {
-  color: #EA526F;
-}
-
-.white {
-  color: #F7F7F2;
-}
-
-.blue {
-  color: #231651;
+.volume.expanded {
+  max-height: 22px;
 }
