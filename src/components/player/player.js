@@ -9,10 +9,11 @@ const Player = (props) => {
             width: '100%',
             height: '100%',
             autoplay: true,
-            channel: "kojovee",
+            channel: "lucasrapini",
         };
         const newPlayer = new window.Twitch.Player("player", options);
         newPlayer.setVolume(0.5);
+        newPlayer.pause();
         setPlayer(newPlayer);
     }, []);
 
