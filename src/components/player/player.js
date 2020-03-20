@@ -6,8 +6,9 @@ const Player = (props) => {
 
     useEffect(() => {
         const options = {
-            width: 400,
-            height: 300,
+            width: '100%',
+            height: '100%',
+            autoplay: true,
             channel: "kojovee",
         };
         const newPlayer = new window.Twitch.Player("player", options);
