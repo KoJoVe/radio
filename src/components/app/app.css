@@ -94,6 +94,13 @@ h1, h2, h3, h4, h5 {
 
 .schedule {
   text-align: center;
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.2s ease-in-out;
+}
+
+.schedule.expanded {
+  max-height: 220px;
 }
 
 .schedule li {
@@ -111,6 +118,10 @@ a {
   display: block;
   page-break-after: always; /* CSS 2.1 syntax */
   break-after: always;
+}
+
+.showSchedule {
+  cursor: pointer;
 }
 
 .volume {

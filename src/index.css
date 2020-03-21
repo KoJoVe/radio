@@ -15,14 +15,14 @@ html, body, #root, .app {
   color: #1F6D20;
 }
 
+.blue {
+  color: #231651;
+}
+
 .pink {
   color: #EA526F;
 }
 
 .white {
   color: #F7F7F2;
-}
-
-.blue {
-  color: #231651;
 }
