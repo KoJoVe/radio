@@ -11,16 +11,6 @@ const App = () => {
     const [schedule, setSchedule] = useState(false);
     const [volume, setVolume] = useState(0.5);
 
-    useEffect(() => {
-        window.addEventListener('message', (event) => {
-            if (event.data === 'twitchoffline') {
-                setOnline(false);
-            } else if (event.data === 'twitchonline') {
-                setOnline(true);
-            }
-        }, false);
-    }, []);
-
     const handleChange = (event) => {
         setVolume(event.target.value);
     }
@@ -34,6 +24,17 @@ const App = () => {
             return (<span className="dark">loading...</span>);
         }
     }
+
+    useEffect(() => {
+        window.addEventListener('message', (event) => {
+            if (event.data === 'twitchoffline') {
+                setOnline(false);
+                setPlaying(false);
+            } else if (event.data === 'twitchonline') {
+                setOnline(true);
+            }
+        }, false);
+    }, []);
 
     return (
         <div className="app">
@@ -54,10 +55,10 @@ const App = () => {
                     <h4 className="showSchedule blue" onClick={() => setSchedule(!schedule)}><span className="pink">click</span> to see our schedule</h4>
                 }
                 <div className={`schedule ${schedule && !playing ? "expanded" : ""}`}>
-                    <a><a href="https://soundcloud.com/lucas-rapini">João Vicente</a><b>1st</b> & <b>3rd</b> <b>Tuesday</b><b> 21:00</b> (BRT)</a>
-                    <a><a href="https://soundcloud.com/lucas-rapini">Tadeu Estanislau</a><b>1st</b> & <b>3rd</b> <b>Thursday</b><b> 21:00</b> (BRT)</a>
-                    <a><a href="https://soundcloud.com/lucas-rapini">Samuel Bastos</a><b>2nd</b> & <b>4th</b> <b>Tuesday</b><b> 21:00</b> (BRT)</a>
-                    <a><a href="https://soundcloud.com/lucas-rapini">Lucas Rapini</a><b>2nd</b> & <b>4th</b> <b>Thursday</b><b> 21:00</b> (BRT)</a>
+                    <span><a href="https://soundcloud.com/lucas-rapini">João Vicente</a><b>1st</b> & <b>3rd</b> <b>Tuesday</b><b> 21:00</b> (BRT)</span>
+                    <span><a href="https://soundcloud.com/lucas-rapini">Tadeu Estanislau</a><b>1st</b> & <b>3rd</b> <b>Thursday</b><b> 21:00</b> (BRT)</span>
+                    <span><a href="https://soundcloud.com/lucas-rapini">Samuel Bastos</a><b>2nd</b> & <b>4th</b> <b>Tuesday</b><b> 21:00</b> (BRT)</span>
+                    <span><a href="https://soundcloud.com/lucas-rapini">Lucas Rapini</a><b>2nd</b> & <b>4th</b> <b>Thursday</b><b> 21:00</b> (BRT)</span>
                 </div>
             </div>
             <div className="player" id="theplayer">
