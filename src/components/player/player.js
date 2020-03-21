@@ -25,11 +25,11 @@ const Player = (props) => {
         });
 
         window.navigator.mediaSession.setActionHandler('play', () => {
-            player.play();
+            newPlayer.play();
         });
 
         window.navigator.mediaSession.setActionHandler('pause', () => {
-            player.pause();
+            newPlayer.pause();
         });
     }, []);
 
