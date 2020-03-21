@@ -15,6 +15,14 @@ const Player = (props) => {
         newPlayer.setVolume(0.5);
         newPlayer.pause();
         setPlayer(newPlayer);
+
+        window.navigator.mediaSession.setActionHandler('play', () => {
+            player.play();
+        });
+
+        window.navigator.mediaSession.setActionHandler('pause', () => {
+            player.pause();
+        });
     }, []);
 
     useEffect(() => {
