@@ -24,7 +24,9 @@ const Player = (props) => {
             window.postMessage('twitchonline', window.location.origin);
         });
 
-        window.navigator.mediaSession.metadata = new window.MediaMetadata({
+        const iframe = document.getElementsByTagName("iframe")[0].contentWindow;
+
+        iframe.navigator.mediaSession.metadata = new window.MediaMetadata({
             title: 'Besouro Live',
             artwork: [
                 { src: 'https://dummyimage.com/96x96',   sizes: '96x96',   type: 'image/png' },
@@ -36,13 +38,13 @@ const Player = (props) => {
             ]
         });
 
-        // window.navigator.mediaSession.setActionHandler('play', () => {
-        //     newPlayer.play();
-        // });
+        iframe.navigator.mediaSession.setActionHandler('play', () => {
+            newPlayer.play();
+        });
 
-        // window.navigator.mediaSession.setActionHandler('pause', () => {
-        //     newPlayer.pause();
-        // });
+        iframe.navigator.mediaSession.setActionHandler('pause', () => {
+            newPlayer.pause();
+        });
     }, []);
 
     useEffect(() => {
