@@ -15,6 +15,14 @@ const App = () => {
         setVolume(event.target.value);
     }
 
+    const play = () => {
+        if (online) {
+            setPlaying(!playing);
+        } else {
+            setPlaying(false);
+        }
+    }
+
     const getOnline = () => {
         if (online === true) {
             return (<span className="green">online</span>); 
@@ -40,19 +48,23 @@ const App = () => {
         <div className="app">
             <div className="main">
                 <img src={logo} className={`app-logo ${playing ? "animated" : ""}`} alt="logo" />
-                <h2 className="dark">Welcome to <span className="pink">Besouro</span> radio</h2>
-                <h5 className="blue">Check out our timetable</h5>
-                <div style={{ animation: playing ? `beetle-dance infinite ${1000}ms linear` : ''}} className={`beetle ${playing ? "animated" : ""}`} onClick={() => setPlaying(!playing)}>
+                <h2 className="dark">welcome to <span className="pink">Besouro</span></h2>
+                <h5 className="blue">electronic music online radio</h5>
+                <div style={{ animation: playing ? `beetle-dance infinite ${1000}ms linear` : ''}} className={`beetle ${playing ? "animated" : ""}`} onClick={play}>
                     <div className="playButton"></div>
                 </div>
-                <h5 className="blue">click on the beetle to play/pause</h5>
                 <h3 className="dark">current status is: <span className="dark">{ getOnline() }</span></h3>
+                {
+                    online ?
+                    <h5 className="blue">click on the beetle to play/pause</h5> :
+                    <h5 className="blue">check our schedule below for live dates</h5>
+                }
                 <div className={`volume ${playing ? "expanded" : ""}`}>
                     <img src={volumeoff} /><input type="range" min="0" max="1" step="0.01" value={volume} onChange={handleChange}></input><img src={volumeup} />
                 </div>
                 {
                     playing ? null :
-                    <h4 className="showSchedule blue" onClick={() => setSchedule(!schedule)}><span className="pink">click</span> to see our schedule</h4>
+                    <h4 className="showSchedule dark" onClick={() => setSchedule(!schedule)}><span className="pink">click</span> to see our schedule</h4>
                 }
                 <div className={`schedule ${schedule && !playing ? "expanded" : ""}`}>
                     <span><a href="https://soundcloud.com/lucas-rapini">João Vicente</a><b>1st</b> & <b>3rd</b> <b>Tuesday</b><b> 21:00</b> (BRT)</span>
