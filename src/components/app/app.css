@@ -54,7 +54,10 @@ h1, h2, h3, h4, h5 {
   padding: 2rem;
   border-radius: 2rem;
   transition: top 0.2s ease-in-out;
-  top: 170px;
+  top: 125px;
+  -webkit-box-shadow: 3px 3px 4px -1px rgba(0,0,0,0.56);
+  -moz-box-shadow: 3px 3px 4px -1px rgba(0,0,0,0.56);
+  box-shadow: 3px 3px 4px -1px rgba(0,0,0,0.56);
 }
 
 .main.closed {

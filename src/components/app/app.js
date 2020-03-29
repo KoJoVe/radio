@@ -11,12 +11,12 @@ const App = () => {
 
     useEffect(() => {
         axios.get('https://mixer.com/api/v1/channels/besouroradio', {})
-          .then((response) => {
-            setOnline(response.data && response.data.online);
-          })
-          .catch(() => {
-            setOnline(false);
-          });
+            .then((response) => {
+                setOnline(response.data && response.data.online);
+            })
+            .catch(() => {
+                setOnline(false);
+            });
     }, []);
 
     const getOnline = () => {
