@@ -30,23 +30,6 @@ h1, h2, h3, h4, h5 {
   background-position: center;
 }
 
-.beetle .playButton {
-  width: 100%;
-  height: 100%;
-  background-image: url('../../assets/play.svg');
-  background-repeat: no-repeat;
-  background-position: 60px 60px;
-}
-
-.beetle.animated .playButton {
-  background-image: none;
-}
-
-.beetle.animated:hover .playButton {
-  background-image: url('../../assets/pause.svg');
-  background-position: 58px 60px;
-}
-
 .app-logo {
   image-rendering: auto;
   background: black;
@@ -67,9 +50,15 @@ h1, h2, h3, h4, h5 {
   z-index: 10;
   color: #262730;
   position: absolute;
-  background-color: white;
+  background-color: #F7F7F2;
   padding: 2rem;
   border-radius: 2rem;
+  transition: top 0.2s ease-in-out;
+  top: 170px;
+}
+
+.main.closed {
+  top: -350px;
 }
 
 @keyframes app-logo-spin {
@@ -121,6 +110,7 @@ a {
 }
 
 .showSchedule {
+  margin-top: 25px;
   cursor: pointer;
 }
 
