@@ -31,12 +31,12 @@ const Calendar = () => {
         let days = 1;
         
         setDays(new Array(n).fill({}).map((_, i) => {
-            const render = i < firstDay || i >= totalDays;
+            const render = !(i < firstDay || i >= totalDays);
             days = render ? days + 1 : days;
             return {
-                day: render ? null : days - 1,
-                date: render ? null : new Date(year, month, days - 1),
-                event: render ? null : weekdays.reduce((prev, w) => w.days.includes(i) ? w.events.shift() : prev, null)
+                day: !render ? null : days - 1,
+                date: !render ? null : new Date(year, month, days - 1),
+                event: !render ? null : weekdays.reduce((prev, w) => w.days.includes(i) ? w.events.shift() : prev, null)
             }
         }));
     }, []);
