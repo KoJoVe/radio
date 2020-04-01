@@ -32,7 +32,7 @@ const Calendar = () => {
         
         setDays(new Array(n).fill({}).map((_, i) => {
             const render = i < firstDay || i >= totalDays;
-            days++;
+            days = render ? days + 1 : days;
             return {
                 day: render ? null : days - 1,
                 date: render ? null : new Date(year, month, days - 1),
