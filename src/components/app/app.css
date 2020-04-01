@@ -60,6 +60,10 @@ h1, h2, h3, h4, h5 {
   box-shadow: 3px 3px 4px -1px rgba(0,0,0,0.56);
 }
 
+.main.schedule {
+  top: 25px;
+}
+
 .main.closed {
   top: -350px;
 }
