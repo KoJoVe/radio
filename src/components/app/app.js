@@ -8,7 +8,6 @@ const App = () => {
     const [online, setOnline] = useState(null);
     const [open, setOpen] = useState(true);
     const [schedule, setSchedule] = useState(false);
-    const [days, setDays] = useState([[],[],[],[],[],[],[]]);
 
     useEffect(() => {
         axios.get('https://mixer.com/api/v1/channels/besouroradio', {})
@@ -18,10 +17,6 @@ const App = () => {
             .catch(() => {
                 setOnline(false);
             });
-
-        const currentDate = new Date(new Date().getFullYear(), new Date().getMonth() + 1, 0);
-        const firstDay = new Date(new Date().getFullYear(), new Date().getMonth(), 1);
-        console.log(currentDate.getDate(), firstDay.getDate(), firstDay.getDay(), firstDay.getFullYear(), firstDay);
     }, []);
 
     const getOnline = () => {
@@ -43,7 +38,7 @@ const App = () => {
                 <div style={{ animation: online ? `beetle-dance infinite ${1000}ms linear` : ''}} className={`beetle ${online ? "animated" : ""}`} onClick={() => setOpen(false)}></div>
                 <h3 className="dark">current status is: <span className="dark">{ getOnline() }</span></h3>
                 {
-                    online ?
+                   online ?
                     <h5 className="blue">click on the beetle to close the card</h5> :
                     <h5 className="blue">check our schedule below for live dates</h5>
                 }
@@ -52,9 +47,6 @@ const App = () => {
                     <h4 className="showSchedule dark" onClick={() => setSchedule(!schedule)}><span className="pink">click</span> to see our schedule</h4> :
                     <h4 className="showSchedule dark" onClick={() => setOpen(true)}><span className="pink">click</span> to reopen card</h4>
                 }
-                <div className="calendar">
-                    <div></div>
-                </div>
                 <div className={`schedule ${schedule ? "expanded" : ""}`}>
                     <span><a href="https://soundcloud.com/lucas-rapini">João Vicente</a><b>1st</b> & <b>3rd</b> <b>Tuesday</b><b> 21:00</b> (BRT)</span>
                     <span><a href="https://soundcloud.com/lucas-rapini">Tadeu Estanislau</a><b>1st</b> & <b>3rd</b> <b>Thursday</b><b> 21:00</b> (BRT)</span>
