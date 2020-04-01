@@ -1,4 +1,5 @@
-import { useEffect } from "react"
+import React, { useState, useEffect } from 'react';
+import './calendar.css';
 
 const Calendar = () => {
     const [days, setDays] = useState([]);
@@ -26,13 +27,54 @@ const Calendar = () => {
         const totalDays = new Date(year, month + 1, 0).getDate();
         const firstDay = new Date(year, month, 1).getDay();
         const n = totalDays + firstDay;
+
+        let days = 1;
         
-        setDays(new Array(n).fill({}).map((_, i) => i < firstDay ? null : weekdays.reduce((prev, w) => w.days.includes(i) ? w.events.shift() : prev, null)));
+        setDays(new Array(n).fill({}).map((_, i) => {
+            const render = i < firstDay || i >= totalDays;
+            days++;
+            return {
+                day: render ? null : days - 1,
+                date: render ? null : new Date(year, month, days - 1),
+                event: render ? null : weekdays.reduce((prev, w) => w.days.includes(i) ? w.events.shift() : prev, null)
+            }
+        }));
     }, []);
+
+    const click = (day, index) => {
+        if (!day.event) {
+            return;
+        }
+        setDay(index);
+    }
 
     return (
         <div className="calendar">
-            { days.map((d, i) => <div key={i} className="day">{ d && d.name }</div>) }
+            <h5 className="month"></h5>
+            <div className="day pink">S</div>
+            <div className="day pink">M</div>
+            <div className="day pink">T</div>
+            <div className="day pink">W</div>
+            <div className="day pink">T</div>
+            <div className="day pink">F</div>
+            <div className="day pink">S</div>
+            { days.map((d, i) => 
+                <div key={i} onClick={() => {click(d, i)}} className={`day ${ day === i ? 'selected' : ''} ${ d.event ? 'event' : ''}`}>
+                    {d.day}
+                </div>
+            )}
+            <div className="info">
+                {
+                    day?
+                    <span>
+                        <b className="green">{days[day].event.name}</b><br /> 
+                        {days[day].date.getDate()}/{days[day].date.getMonth() + 1}/{days[day].date.getFullYear()} 21:00 (GMT)
+                    </span> :
+                    null
+                }
+            </div>
         </div>
     );
 }
+
+export default Calendar;

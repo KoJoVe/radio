@@ -1,0 +1,32 @@
+.calendar {
+    width: 250px;
+    height: 300px;
+    margin-top: 20px;
+}
+
+.day {
+    width: 14.25%;
+    float: left;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.event {
+    background: #EA526F;
+    color: #F7F7F2;
+    cursor: pointer;
+}
+
+.selected {
+    background: #1F6D20;
+    color: #F7F7F2;
+}
+
+.info {
+    width: 100%;
+    float: left;
+    margin-top: 15px;
+}
