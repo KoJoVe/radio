@@ -1,7 +1,7 @@
 .calendar {
     width: 250px;
     height: 300px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .day {
@@ -28,5 +28,10 @@
 .info {
     width: 100%;
     float: left;
-    margin-top: 15px;
+    margin-top: 5px;
+}
+
+b a {
+    text-decoration: underline;
+    color: #1F6D20 !important;
 }

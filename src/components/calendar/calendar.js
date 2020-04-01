@@ -6,10 +6,10 @@ const Calendar = () => {
     const [day, setDay] = useState(null);
     
     useEffect(() => {
-        const vicente = { name: "João Vicente" };
-        const tadeu = { name: "Tadeu Estanislau" };
-        const samuel = { name: "Samuel Bastos" };
-        const lucas = { name: "Lucas Rapini" };
+        const vicente = { name: "João Vicente", link: "https://soundcloud.com/kojove" };
+        const tadeu = { name: "Tadeu Estanislau", link: "https://soundcloud.com/tadeu-estanislau" };
+        const samuel = { name: "Samuel Bastos", link: "https://soundcloud.com/sambsj" };
+        const lucas = { name: "Lucas Rapini", link: "https://soundcloud.com/lucas-rapini" };
         
         const weekdays = [
             { days: [0, 7, 14, 21, 28, 35], events: []},
@@ -67,7 +67,7 @@ const Calendar = () => {
                 {
                     day?
                     <span>
-                        <b className="green">{days[day].event.name}</b><br /> 
+                        <b className="green"><a href={days[day].event.link} target="_blank">{days[day].event.name}</a></b> 
                         {days[day].date.getDate()}/{days[day].date.getMonth() + 1}/{days[day].date.getFullYear()} 21:00 (GMT)
                     </span> :
                     null
