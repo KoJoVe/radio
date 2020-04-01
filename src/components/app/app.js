@@ -39,7 +39,7 @@ const App = () => {
 
     return (
         <div className="app">
-            <div className={`main ${schedule ? "schedule" : ""} ${!open ? "closed" : ""}`} >
+            <div className={`main ${!open ? "closed" : ""} ${schedule ? "expanded" : ""}`} >
                 <img src={logo} className={`app-logo ${online ? "animated" : ""}`} alt="logo" />
                 <h2 className="dark">welcome to <span className="pink">Besouro</span></h2>
                 <h5 className="blue">electronic music online radio</h5>
