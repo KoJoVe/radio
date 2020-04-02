@@ -72,7 +72,7 @@ const App = () => {
                             <h5 className="blue breakline"><span className="pink atention">Unmute</span> the player to listen!</h5>
                             <h5 className="blue breakline"><span className="pink atention">Mobile users:</span> select "Audio Only"</h5>
                             <h5 className="blue">on the player settings to enable</h5>
-                            <h5 className="blue"> background music ;)</h5>
+                            <h5 className="blue">background music ;)</h5>
                         </div>
                     }
                    </div> :
