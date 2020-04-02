@@ -82,7 +82,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .main.closed {
-  top: -280px;
+  top: -270px;
 }
 
 @keyframes app-logo-spin {
@@ -147,4 +147,8 @@ a {
 
 .volume.expanded {
   max-height: 22px;
+}
+
+.breakline { 
+  margin-top: 10px;
 }

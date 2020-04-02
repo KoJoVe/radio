@@ -21,7 +21,6 @@ const App = () => {
                 } else if (on && !live) {
                     setOnline('online');
                 } else {
-                    console.log("ASDASDASDASDASDAS");
                     setOnline('offline');
                 }
             })
@@ -65,8 +64,17 @@ const App = () => {
                 <h3 className="dark">current status is: <span className="dark">{ getOnline() }</span></h3>
                 {
                    isOnline() ?
-                    <h5 className="blue">click on the beetle to close the card</h5> :
-                    <h5 className="blue">check our schedule below for live dates</h5>
+                   <div>
+                       <h5 className="blue">Click on the beetle to close the card</h5>
+
+                       <h5 className="blue breakline">Raise the volume on the player!</h5>
+
+                       <h5 className="blue breakline"><span className="pink">For mobile users:</span> mark "Audio Only"</h5>
+                       <h5 className="blue">to enable background music</h5>
+                   </div> :
+                   <div>
+                       <h5 className="blue">check our schedule below for live dates</h5>
+                   </div>
                 }
                 {
                     open ?
