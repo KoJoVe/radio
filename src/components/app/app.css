@@ -82,7 +82,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .main.closed {
-  top: -270px;
+  top: -280px;
 }
 
 @keyframes app-logo-spin {
