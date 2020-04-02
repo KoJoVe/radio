@@ -31,13 +31,13 @@ const App = () => {
 
     const getOnline = () => {
         if (online === 'online') {
-            return (<span className="blue">online</span>); 
+            return (<span className="blue">Online</span>); 
         } else if (online === 'live') {
-            return (<span className="green">live</span>);
+            return (<span className="green">Live</span>);
         } else if (online === 'offline') {
-            return (<span className="dark">offline</span>);
+            return (<span className="dark">Offline</span>);
         } else {
-            return (<span className="dark">loading...</span>);
+            return (<span className="dark">Loading...</span>);
         }
     }
 
@@ -65,11 +65,12 @@ const App = () => {
                 {
                    isOnline() ?
                    <div>
-                       <h5 className="blue">Click on the beetle to close the card</h5>
+                       <h5 className="green">Click on the beetle to close the card</h5>
 
-                       <h5 className="blue breakline">Raise the volume on the player!</h5>
+                       <h5 className="blue breakline"><span className="pink atention">Unmute</span> the player!</h5>
 
-                       <h5 className="blue breakline"><span className="pink">For mobile users:</span> mark "Audio Only"</h5>
+                       <h5 className="blue breakline"><span className="pink atention">Mobile users:</span> select</h5>
+                       <h5 className="blue">"Audio Only" on the player settings</h5>
                        <h5 className="blue">to enable background music</h5>
                    </div> :
                    <div>
