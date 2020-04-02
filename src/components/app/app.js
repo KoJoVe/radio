@@ -67,11 +67,11 @@ const App = () => {
                    <div>
                        <h5 className="green">Click on the beetle to close the card</h5>
 
-                       <h5 className="blue breakline"><span className="pink atention">Unmute</span> the player!</h5>
+                       <h5 className="blue breakline"><span className="pink atention">Unmute</span> the player to listen!</h5>
 
-                       <h5 className="blue breakline"><span className="pink atention">Mobile users:</span> select</h5>
-                       <h5 className="blue">"Audio Only" on the player settings</h5>
-                       <h5 className="blue">to enable background music</h5>
+                       <h5 className="blue breakline"><span className="pink atention">Mobile users:</span> select "Audio Only"</h5>
+                       <h5 className="blue">on the player settings to enable</h5>
+                       <h5 className="blue"> background musicc on cellphone ;)</h5>
                    </div> :
                    <div>
                        <h5 className="blue">check our schedule below for live dates</h5>
