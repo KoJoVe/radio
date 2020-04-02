@@ -55,7 +55,7 @@ const App = () => {
 
     return (
         <div className="app">
-            <div className={`main ${!open ? "closed" : ""} ${schedule ? "expanded" : ""}`} >
+            <div className={`main card ${!open ? "closed" : ""} ${schedule ? "expanded" : ""}`} >
                 <h2 className="dark">welcome to <span className="pink">Besouro</span></h2>
                 <h5 className="blue">electronic music online radio</h5>
                 <div className="images" onClick={close}>

@@ -20,7 +20,7 @@ h1, h2, h3, h4, h5 {
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: 250px;
+  height: 150px;
   cursor: pointer;
 }
 
@@ -31,22 +31,22 @@ h1, h2, h3, h4, h5 {
   cursor: pointer;
   margin-top: 20px;
   margin-bottom: 20px;
-  top: 27%;
+  top: 10%;
   left: 38.2%;
   z-index: 2;
 }
 
 .app-logo {
   position: absolute;
-  top: 12.5%;
-  left: 12.5%;
+  top: 7%;
+  left: 25%;
   image-rendering: auto;
   background: black;
   border: 1px solid black;
   -webkit-box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.75);
   box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.75);
-  width: 75%;
+  width: 50%;
   border-radius: 150px;
   margin-bottom: 5px;
   z-index: 1;
@@ -60,18 +60,21 @@ h1, h2, h3, h4, h5 {
   animation: app-logo-spin infinite 4s linear;
 }
 
-.main {
+.card {
+  position: absolute;
   z-index: 10;
   color: #262730;
-  position: absolute;
   background-color: #F7F7F2;
   padding: 2rem;
   border-radius: 2rem;
-  transition: top 0.2s ease-in-out;
-  top: 125px;
   -webkit-box-shadow: 3px 3px 4px -1px rgba(0,0,0,0.56);
   -moz-box-shadow: 3px 3px 4px -1px rgba(0,0,0,0.56);
   box-shadow: 3px 3px 4px -1px rgba(0,0,0,0.56);
+}
+
+.main {
+  transition: top 0.2s ease-in-out;
+  top: 100px;
 }
 
 .main.expanded {
@@ -79,7 +82,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .main.closed {
-  top: -375px;
+  top: -280px;
 }
 
 @keyframes app-logo-spin {
