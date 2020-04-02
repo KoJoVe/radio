@@ -6,14 +6,23 @@ import logo from '../../assets/logo.png';
 import './app.css';
 
 const App = () => {
-    const [online, setOnline] = useState(null);
+    const [online, setOnline] = useState('');
     const [open, setOpen] = useState(true);
     const [schedule, setSchedule] = useState(false);
 
     useEffect(() => {
         axios.get('https://mixer.com/api/v1/channels/besouroradio', {})
             .then((response) => {
-                setOnline(response.data && response.data.online);
+                const on = response.data && response.data.online;
+                const live = response.data && response.data.name && !response.data.name.includes("Recorded");
+                if (on && live) {
+                    setOnline('live');
+                } else if (on && !live) {
+                    setOnline('online');
+                } else {
+                    console.log("ASDASDASDASDASDAS");
+                    setOnline('offline');
+                }
             })
             .catch(() => {
                 setOnline(false);
@@ -21,13 +30,19 @@ const App = () => {
     }, []);
 
     const getOnline = () => {
-        if (online === true) {
-            return (<span className="green">online</span>); 
-        } else if (online === false) {
+        if (online === 'online') {
+            return (<span className="blue">online</span>); 
+        } else if (online === 'live') {
+            return (<span className="green">live</span>);
+        } else if (online === 'offline') {
             return (<span className="dark">offline</span>);
         } else {
             return (<span className="dark">loading...</span>);
         }
+    }
+
+    const isOnline = () => {
+        return online === 'online' || online === 'live';
     }
 
     const close = () => {
@@ -40,13 +55,13 @@ const App = () => {
     return (
         <div className="app">
             <div className={`main ${!open ? "closed" : ""} ${schedule ? "expanded" : ""}`} >
-                <img src={logo} className={`app-logo ${online ? "animated" : ""}`} alt="logo" />
+                <img src={logo} className={`app-logo ${isOnline() ? "animated" : ""}`} alt="logo" />
                 <h2 className="dark">welcome to <span className="pink">Besouro</span></h2>
                 <h5 className="blue">electronic music online radio</h5>
-                <div style={{ animation: online ? `beetle-dance infinite ${1000}ms linear` : ''}} className={`beetle ${online ? "animated" : ""}`} onClick={close}></div>
+                <div style={{ animation: isOnline() ? `beetle-dance infinite ${1000}ms linear` : ''}} className={`beetle ${isOnline() ? "animated" : ""}`} onClick={close}></div>
                 <h3 className="dark">current status is: <span className="dark">{ getOnline() }</span></h3>
                 {
-                   online ?
+                   isOnline() ?
                     <h5 className="blue">click on the beetle to close the card</h5> :
                     <h5 className="blue">check our schedule below for live dates</h5>
                 }
