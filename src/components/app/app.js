@@ -66,12 +66,15 @@ const App = () => {
                    isOnline() ?
                    <div>
                        <h5 className="green">Click on the beetle to close the card</h5>
-
-                       <h5 className="blue breakline"><span className="pink atention">Unmute</span> the player to listen!</h5>
-
-                       <h5 className="blue breakline"><span className="pink atention">Mobile users:</span> select "Audio Only"</h5>
-                       <h5 className="blue">on the player settings to enable</h5>
-                       <h5 className="blue"> background music ;)</h5>
+                    {
+                        schedule ? null :
+                        <div>
+                            <h5 className="blue breakline"><span className="pink atention">Unmute</span> the player to listen!</h5>
+                            <h5 className="blue breakline"><span className="pink atention">Mobile users:</span> select "Audio Only"</h5>
+                            <h5 className="blue">on the player settings to enable</h5>
+                            <h5 className="blue"> background music ;)</h5>
+                        </div>
+                    }
                    </div> :
                    <div>
                        <h5 className="blue">check our schedule below for live dates</h5>
