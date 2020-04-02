@@ -68,7 +68,7 @@ const Calendar = () => {
                     day?
                     <span>
                         <b className="green"><a href={days[day].event.link} target="_blank">{days[day].event.name}</a></b> 
-                        {days[day].date.getDate()}/{days[day].date.getMonth() + 1}/{days[day].date.getFullYear()} 21:00 (GMT)
+                        {days[day].date.getDate()}/{days[day].date.getMonth() + 1}/{days[day].date.getFullYear()} 21:00 (BRT)
                     </span> :
                     null
                 }

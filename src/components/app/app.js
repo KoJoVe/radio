@@ -3,6 +3,7 @@ import axios from 'axios';
 import Player from '../player/player';
 import Calendar from '../calendar/calendar';
 import logo from '../../assets/logo.png';
+import beetle from '../../assets/beetle.png';
 import './app.css';
 
 const App = () => {
@@ -55,10 +56,12 @@ const App = () => {
     return (
         <div className="app">
             <div className={`main ${!open ? "closed" : ""} ${schedule ? "expanded" : ""}`} >
-                <img src={logo} className={`app-logo ${isOnline() ? "animated" : ""}`} alt="logo" />
                 <h2 className="dark">welcome to <span className="pink">Besouro</span></h2>
                 <h5 className="blue">electronic music online radio</h5>
-                <div style={{ animation: isOnline() ? `beetle-dance infinite ${1000}ms linear` : ''}} className={`beetle ${isOnline() ? "animated" : ""}`} onClick={close}></div>
+                <div className="images" onClick={close}>
+                    <img src={beetle} className={`beetle ${isOnline() ? "animated" : ""}`} />
+                    <img src={logo} className={`app-logo ${isOnline() ? "animated" : ""}`} alt="logo" />
+                </div>
                 <h3 className="dark">current status is: <span className="dark">{ getOnline() }</span></h3>
                 {
                    isOnline() ?
