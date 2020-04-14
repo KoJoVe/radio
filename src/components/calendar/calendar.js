@@ -6,10 +6,10 @@ const Calendar = () => {
     const [day, setDay] = useState(null);
     
     useEffect(() => {
-        const vicente = { name: "João Vicente", link: "https://soundcloud.com/kojove" };
-        const tadeu = { name: "Tadeu Estanislau", link: "https://soundcloud.com/tadeu-estanislau" };
-        const samuel = { name: "Samuel Bastos", link: "https://soundcloud.com/sambsj" };
-        const lucas = { name: "Lucas Rapini", link: "https://soundcloud.com/lucas-rapini" };
+        const vicente = { hour: "21:00", name: "João Vicente", link: "https://soundcloud.com/kojove" };
+        const tadeu = { hour: "21:00", name: "Tadeu Estanislau", link: "https://soundcloud.com/tadeu-estanislau" };
+        const samuel = { hour: "20:00", name: "Samuel Bastos", link: "https://soundcloud.com/sambsj" };
+        const lucas = { hour: "21:00", name: "Lucas Rapini", link: "https://soundcloud.com/lucas-rapini" };
         
         const weekdays = [
             { days: [0, 7, 14, 21, 28, 35], events: []},
@@ -68,7 +68,7 @@ const Calendar = () => {
                     day?
                     <span>
                         <b className="green"><a href={days[day].event.link} target="_blank">{days[day].event.name}</a></b> 
-                        {days[day].date.getDate()}/{days[day].date.getMonth() + 1}/{days[day].date.getFullYear()} 21:00 (BRT)
+                        {days[day].date.getDate()}/{days[day].date.getMonth() + 1}/{days[day].date.getFullYear()} {days[day].event.hour} (BRT)
                     </span> :
                     null
                 }
