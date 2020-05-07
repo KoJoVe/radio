@@ -8,15 +8,15 @@ const Calendar = () => {
     useEffect(() => {
         const vicente = { hour: "21:00", name: "João Vicente", link: "https://soundcloud.com/kojove" };
         const tadeu = { hour: "21:00", name: "Tadeu Estanislau", link: "https://soundcloud.com/tadeu-estanislau" };
-        const samuel = { hour: "20:00", name: "Samuel Bastos", link: "https://soundcloud.com/sambsj" };
+        const samuel = { hour: "18:00", name: "Samuel Bastos", link: "https://soundcloud.com/sambsj" };
         const lucas = { hour: "21:00", name: "Lucas Rapini", link: "https://soundcloud.com/lucas-rapini" };
         
         const weekdays = [
             { days: [0, 7, 14, 21, 28, 35], events: []},
             { days: [1, 8, 15, 22, 29, 36], events: []},
-            { days: [2, 9, 16, 23, 30, 37], events: [vicente, samuel, vicente, samuel]},
+            { days: [2, 9, 16, 23, 30, 37], events: [vicente, tadeu, vicente, tadeu]},
             { days: [3, 10, 17, 24, 31, 38], events: []},
-            { days: [4, 11, 18, 25, 32, 39], events: [tadeu, lucas, tadeu, lucas]},
+            { days: [4, 11, 18, 25, 32, 39], events: [samuel, lucas, samuel, lucas]},
             { days: [5, 12, 19, 26, 33, 40], events: []},
             { days: [6, 13, 20, 27, 34, 41], events: []},
         ]
