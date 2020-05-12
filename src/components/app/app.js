@@ -106,7 +106,7 @@ const App = () => {
                     <Calendar />
                 </div>
                 <div className={`${schedule || !open ? "none" : ""}`}>
-                    <h4 className="stream-title">Stream also available in:</h4>
+                    <h4 className="stream-title">Stream also available on:</h4>
                     <div className="brand-icon">
                         <a href="https://www.facebook.com/besouro.radio" target="_blank">
                             <FontAwesomeIcon icon={faFacebook} style={{ color: 'blue' }} size="2x"/>
