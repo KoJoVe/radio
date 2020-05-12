@@ -74,7 +74,7 @@ h1, h2, h3, h4, h5 {
 
 .main {
   transition: top 0.2s ease-in-out;
-  top: 100px;
+  top: 50px;
 }
 
 .main.expanded {
@@ -125,6 +125,10 @@ h1, h2, h3, h4, h5 {
   justify-content: center;
 }
 
+.none {
+  display: none;
+}
+
 a {
   margin-top: .2rem;
   margin-bottom: .5rem;
@@ -156,4 +160,14 @@ a {
 .atention {
   font-weight: bold;
   font-size: 15px;
+}
+
+.brand-icon {
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+.stream-title { 
+  margin: 15px 0px;
 }
