@@ -38,7 +38,7 @@ const App = () => {
                 } else if (on && !live) {
                     setOnline('online');
                 } else {
-                    setOnline('live');
+                    setOnline('offline');
                 }
             })
             .catch(() => {
