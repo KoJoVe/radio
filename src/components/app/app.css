@@ -21,6 +21,9 @@ h1, h2, h3, h4, h5 {
   overflow: hidden;
   width: 100%;
   height: 150px;
+}
+
+.images-click {
   cursor: pointer;
 }
 
@@ -28,7 +31,6 @@ h1, h2, h3, h4, h5 {
   width: 24%;
   margin: auto;
   position: absolute;
-  cursor: pointer;
   margin-top: 20px;
   margin-bottom: 20px;
   top: 10%;
@@ -137,8 +139,14 @@ a {
   break-after: always;
 }
 
+u {
+  text-decoration: underline;
+  text-decoration-color: #EA526F;
+  color: #EA526F;
+}
+
 .showSchedule {
-  margin-top: 25px;
+  margin-top: 15px;
   cursor: pointer;
 }
 

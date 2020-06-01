@@ -38,7 +38,7 @@ const App = () => {
                 } else if (on && !live) {
                     setOnline('online');
                 } else {
-                    setOnline('offline');
+                    setOnline('live');
                 }
             })
             .catch(() => {
@@ -52,7 +52,7 @@ const App = () => {
         } else if (online === 'live') {
             return (<span className="green">Live</span>);
         } else if (online === 'offline') {
-            return (<span className="dark">Offline</span>);
+            return (<span className="pink">Offline</span>);
         } else {
             return (<span className="dark">Loading...</span>);
         }
@@ -63,8 +63,10 @@ const App = () => {
     }
 
     const close = () => {
-        setOpen(false); 
-        setSchedule(false);
+        if (isOnline()) {
+            setOpen(false); 
+            setSchedule(false);
+        }
     }
 
     const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -73,8 +75,8 @@ const App = () => {
         <div className="app">
             <div className={`main card ${!open ? "closed" : ""} ${schedule ? "expanded" : ""}`} >
                 <h2 className="dark">welcome to <span className="pink">Besouro</span></h2>
-                <h5 className="blue">electronic music online radio</h5>
-                <div className="images" onClick={close}>
+                <h5 className="dark">electronic music online radio</h5>
+                <div className={`images ${isOnline() ? "images-click" : ""}`} onClick={close}>
                     <img src={beetle} className={`beetle ${isOnline() ? "animated" : ""}`} />
                     <img src={logo} className={`app-logo ${isOnline() ? "animated" : ""}`} alt="logo" />
                 </div>
@@ -93,16 +95,14 @@ const App = () => {
                         </div>
                     }
                    </div> :
-                   <div>
-                       <h5 className="blue">check our schedule below for live dates</h5>
-                   </div>
+                   null
                 }
                 {
                     open ?
                         (!schedule ?
-                        <h4 className="showSchedule dark" onClick={() => setSchedule(!schedule)}><span className="pink">click</span> to see our schedule</h4> :
-                        <h4 className="showSchedule dark" onClick={() => setSchedule(!schedule)}>Schedule for <span className="pink">{monthNames[new Date().getMonth()]}</span> {new Date().getFullYear()}</h4>) :
-                    <h4 className="showSchedule dark" onClick={() => setOpen(true)}><span className="pink">click</span> to reopen card</h4>
+                        <h4 className="showSchedule dark" onClick={() => setSchedule(!schedule)}><u><span className="pink">click here</span> to see our schedule</u></h4> :
+                        <h4 className="showSchedule dark" onClick={() => setSchedule(!schedule)}><u>Schedule for <span className="pink">{monthNames[new Date().getMonth()]}</span> {new Date().getFullYear()}</u></h4>) :
+                    <h4 className="showSchedule dark" onClick={() => setOpen(true)}><u><span className="pink">click here</span> to reopen card</u></h4>
                 }
                 <div className={`schedule ${schedule ? "expanded" : ""}`}>
                     <Calendar />
