@@ -162,8 +162,14 @@ a {
   font-size: 15px;
 }
 
-.brand-icon {
-  width: 100%;
+.stream-icon {
+  width: 75%;
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+.social-icon {
+  width: 35%;
   display: inline-flex;
   justify-content: space-between;
 }

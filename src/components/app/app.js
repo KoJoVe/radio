@@ -5,20 +5,22 @@ import Calendar from '../calendar/calendar';
 import logo from '../../assets/logo.png';
 import beetle from '../../assets/beetle.png';
 import './app.css';
-import { 
-    faFacebook,
+import {
     faMixer,
     faTwitch,
-    faYoutube
+    faYoutube,
+    faFacebook,
+    faInstagram
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from '@fortawesome/fontawesome-svg-core';
 
 library.add(
-    faFacebook,
     faMixer,
     faTwitch,
-    faYoutube
+    faYoutube,
+    faFacebook,
+    faInstagram
 );
 
 const App = () => {
@@ -106,21 +108,34 @@ const App = () => {
                     <Calendar />
                 </div>
                 <div className={`${schedule || !open ? "none" : ""}`}>
-                    <h4 className="stream-title">Stream also available on:</h4>
-                    <div className="brand-icon">
-                        <a href="https://www.facebook.com/besouro.radio" target="_blank">
-                            <FontAwesomeIcon icon={faFacebook} style={{ color: 'blue' }} size="2x"/>
-                        </a>
-                        <a href="https://www.twitch.tv/besouroradio" target="_blank">
-                            <FontAwesomeIcon icon={faTwitch} style={{ color: 'purple' }} size="2x"/>
-                        </a>
-                        <a href="https://mixer.com/besouroradio" target="_blank">
-                            <FontAwesomeIcon icon={faMixer} style={{ color: 'blue' }} size="2x"/>
-                        </a>
-                        <a href="https://www.youtube.com/channel/UCTSKcDMO3YOINJC1u-zZwmw" target="_blank">
-                            <FontAwesomeIcon icon={faYoutube} style={{ color: 'red' }} size="2x"/>
-                        </a>
-                    </div>
+                    {
+                        isOnline() ?
+                        <div>
+                            <h4 className="stream-title">Stream also available on:</h4>
+                            <div className="stream-icon">
+                                <a href="https://www.twitch.tv/besouroradio" target="_blank">
+                                    <FontAwesomeIcon icon={faTwitch} style={{ color: 'purple' }} size="2x"/>
+                                </a>
+                                <a href="https://mixer.com/besouroradio" target="_blank">
+                                    <FontAwesomeIcon icon={faMixer} style={{ color: 'blue' }} size="2x"/>
+                                </a>
+                                <a href="https://www.youtube.com/channel/UCTSKcDMO3YOINJC1u-zZwmw" target="_blank">
+                                    <FontAwesomeIcon icon={faYoutube} style={{ color: 'red' }} size="2x"/>
+                                </a>
+                            </div>
+                        </div> :
+                        <div>
+                            <h4 className="stream-title">Find us at:</h4>
+                            <div className="social-icon">
+                                <a href="https://www.facebook.com/besouro.radio" target="_blank">
+                                    <FontAwesomeIcon icon={faFacebook} style={{ color: 'blue' }} size="2x"/>
+                                </a>
+                                <a href="https://www.instagram.com/besouroradio/" target="_blank">
+                                    <FontAwesomeIcon icon={faInstagram} style={{ color: 'red' }} size="2x"/>
+                                </a>
+                            </div>
+                        </div>
+                    }
                 </div>
             </div>
             <div className="player" id="theplayer">
